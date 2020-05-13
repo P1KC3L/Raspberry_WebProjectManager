@@ -11,7 +11,9 @@ To run the aplication, please follow the next instructions:
 git clone https://github.com/P1KC3L/Raspberry_WebProjectManager.git
 ```
 2- Next, get the app running by executing the ```launcher.sh``` file:
-```./Raspberry_WebProjectManager/launcher.sh```
+```
+./Raspberry_WebProjectManager/launcher.sh
+```
 3- Finally, to use the application, open your browser and search _localhost:5000_
 
 The page will display a link to go to the home project management page, where a button for the RGB lights will be displayed.
