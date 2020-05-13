@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block head %}
+<title>My RBPi Controller: RGB Lights</title> {% endblock %} {% block body %}
+<div class="content">
+    <h1>RGB LIGHTS CONTROLLER</h1>
+    <form action="/rgb-lights/modify/update/{{led.getId}}" method="POST">
+        <table>
+            <tr>
+                <th>Set the light configuration for LED {{led_number}}</th>
+            </tr>
+            <tr>
+                <td><b>Choose a mode:</b>
+                    <label><input type="radio" name="mode" id="mode1" value="static" checked>Static</label>
+                    <label><input type="radio" name="mode" id="mode2" value="fading">Fading</label>
+                    <label><input type="radio" name="mode" id="mode3" value="rainbow">Rainbow</label></td>
+            </tr>
+            <tr>
+                <td><label><b>Set duration of the light on:</b></label>
+                    <input type="text" name="light_duration" id="light_duration" placeholder="Time in seconds" style="width:140px" value="0.008"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label><b>R:</b></label>
+                    <input type="text" id="redval" name="redval" placeholder="0-255" style="width:50px" value="255">
+                    <label><b>G:</b></label>
+                    <input type="text" id="greenval" name="greenval" placeholder="0-255" style="width:50px" value="255">
+                    <label><b>B:</b></label>
+                    <input type="text" id="blueval" name="blueval" placeholder="0-255" style="width:50px" value="255">
+                </td>
+            </tr>
+            <tr>
+                <td style="border-bottom: 0px solid #ffffff">
+                    <a href="/rgb-lights/modify/delete/{{led.getId}}"><input type="button" value="DELETE RGB LED" style="margin:5px;width:130px;"></a>
+                    <input type="submit" value="UPDATE RGB LED" style="margin:5px;width:130px;">
+                    <a href="/rgb-lights"><input type="button" value="BACK" style="margin:5px;width:50px;"></a>
+                </td>
+            </tr>
+        </table>
+    </form>
+    {% endblock %}
+</div>

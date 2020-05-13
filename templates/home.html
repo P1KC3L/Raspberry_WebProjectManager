@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block head %}
+<title>My RBPi Controller: Home</title> {% endblock %} {% block body %}
+<div class="content">
+    <h1>RASPBERRY PROJECTS DASHBOARD</h1>
+    <p>Push a button to go to the specific Raspberry Pi Web Project application.</p>
+    <table>
+        <tr>
+            <th>Project</th>
+            <th>Description</th>
+            <th>Link</th>
+        </tr>
+        <tr>
+            <td>RGB Lights</td>
+            <td>Application made to setup, configure and control the color of an RGB LED.</td>
+            <td><a href="/rgb-lights" target=""><button>RGB LIGHT CONTROLLER</button></a> </td>
+        </tr>
+    </table>
+    {% endblock %}
+</div>

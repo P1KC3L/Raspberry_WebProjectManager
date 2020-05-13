@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block head %}
+<title>My RBPi Controller: RGB Lights</title> {% endblock %} {% block body %}
+<div class="content">
+    <h1>RGB LIGHTS CONTROLLER</h1>
+    <p>With this application you can easily connect RGB LEDs to your Raspberry and control them remotely by setting them up here.</p>
+    <p>To start, please select a configuration button...</p>
+    <br>
+    <table>
+        <tr>
+            {% if leds == [] %}
+            <p style="color:grey">There's no RGB LEDs to show yet.</p> {% else %}
+            <th>LED</th>
+            <th>STATUS</th>
+            <th>COLOR</th>
+            <th>OPTIONS</th>
+            {% endif %}
+        </tr>
+
+        {% for led in leds%}
+        <tr>
+            <td>{{leds.index(led)+1}}</td>
+            <td>{% if led.currentState == False %} OFF {% else %} ON {% endif %}</td>
+            <td>
+                <div style="width:30px;height:30px;border:1px solid {{led.currentColourHex}}; background-color:{{led.currentColourHex}};display: inline-block"></div>
+            </td>
+            <td><a href="/rgb-lights/turn/{{led.getId}}" target=""><button style="width: 100px">{% if led.currentState == False %}TURN ON{% else %}TURN OFF{% endif %}</button></a><a href="/rgb-lights/modify/{{led.getId}}" target=""><button style="width: 100px">Modify</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <form action="/rgb-lights/add" method="post">
+        <input type="text" placeholder="RED PIN" style="margin:2px;width:70px;" name="redpin" id="redpin">
+        <input type="text" placeholder="GREEN PIN" style="margin:2px;width:70px;" name="greenpin" id="greenpin">
+        <input type="text" placeholder="BLUE PIN" style="margin:2px;width:70px;" name="bluepin" id="bluepin">
+        <input type="submit" value="ADD RGB LED" style="margin:2px;width:100px;">
+    </form>
+    {% endblock %}
+</div>
