@@ -5,6 +5,7 @@ This repository hands off a local web application that stores a dashboard with s
 Currently, this application has just one project, that was made to set up and control remotely some RGB leds connected to the Raspberry GPIOs. 
 
 To run the aplication, please follow the next instructions:
+
 1- Open a terminal in the folder in which you will download the repository and clone it using the git command:
 ```
 git clone https://github.com/P1KC3L/Raspberry_WebProjectManager.git
