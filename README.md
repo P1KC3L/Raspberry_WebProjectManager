@@ -12,7 +12,7 @@ git clone https://github.com/P1KC3L/Raspberry_WebProjectManager.git
 ```
 2- Next, get the app running by executing the ```launcher.sh``` file:
 ```
-sudo chmod x+u ./Raspberry_WebProjectManager/launcher.sh
+sudo chmod u+x ./Raspberry_WebProjectManager/launcher.sh
 ./Raspberry_WebProjectManager/launcher.sh
 ```
 3- Finally, to use the application, open your browser and search _localhost:5000_
